@@ -3,13 +3,13 @@ var production = process.env.NODE_ENV === 'production';
 // var ExtractPlugin = require('extract-text-webpack-plugin');
 var CleanPlugin = require('clean-webpack-plugin');
 
-var plugins = [
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'main',
-    children: true,
-    minChunks: 2,
-  }),
-];
+// var plugins = [
+//   new webpack.optimize.CommonsChunkPlugin({
+//     name: 'main',
+//     children: true,
+//     minChunks: 2,
+//   }),
+// ];
 
 if (production) {
   plugins = plugins.concat([
@@ -63,7 +63,7 @@ module.exports = {
     chunkFilename: '[name]-[chunkhash].js',
     publicPath: 'builds/',
   },
-  plugins: plugins,
+  // plugins: plugins,
   module: {
     loaders: [
       {
