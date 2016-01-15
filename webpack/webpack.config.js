@@ -1,10 +1,11 @@
 var webpack = require('webpack');
 var production = process.env.NODE_ENV === 'production';
+// var ExtractPlugin = require('extract-text-webpack-plugin');
 var CleanPlugin = require('clean-webpack-plugin');
 
 var plugins = [
   new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
+    name: 'main',
     children: true,
     minChunks: 2,
   }),
@@ -67,11 +68,8 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015']
-        }
+        loader: 'babel',
+        include: __dirname + '/src'
       },
       {
         test:   /\.scss/,
