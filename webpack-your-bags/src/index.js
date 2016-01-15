@@ -1,16 +1,8 @@
-// if (document.querySelectorAll('a').length) {
-//   require.ensure([], () => {
-    const Button = require('./Components/Button');
-    const button = new Button('google.com');
+import Button from './Components/Button';
+import Header from './Components/Header';
+import './styles/app.scss';
 
-    button.render('a');
-//   });
-// }
-//
-// if (document.querySelectorAll('h1').length) {
-//   require.ensure([], () => {
-    const Header = require('./Components/Header');
+const button = new Button('google.com');
 
-    new Header.render('h1');
-//   });
-// }
+button.render('a');
+new Header().render('h1');
